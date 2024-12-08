@@ -14,9 +14,14 @@ export const tabsComp = createTabs(
       component: '/src/views/Nav.tsx',
     },
     {
-      label: '基金统计',
+      label: '基金所有者排名',
       name: 'table3',
       component: '/src/views/Owner.vue',
+    },
+    {
+      label: '基金成立数量走势',
+      name: 'table4',
+      component: '/src/views/Count.vue',
     },
   ]),
   {

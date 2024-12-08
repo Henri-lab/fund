@@ -66,6 +66,21 @@ export const useFundStore = defineStore('fund', () => {
     return res;
   };
 
+  const getCountByYear = () => {
+    const result = allDesc.value.map((item) => {
+      return {
+        label: `${item.ticker} (${item.name})`,
+        year: new Date(item['incept dt']).getFullYear(),
+      };
+    });
+    const yearCount = result.reduce((acc, cur) => {
+      const y = cur.year;
+      acc[y] = (acc[y] || 0) + 1;
+      return acc;
+    }, {} as Record<number, number>);
+    return yearCount;
+  };
+
   return {
     tickersOptions,
     setTickerOptions,
@@ -78,5 +93,6 @@ export const useFundStore = defineStore('fund', () => {
     allDesc,
     setAllDesc,
     getTickers,
+    getCountByYear,
   };
 });
