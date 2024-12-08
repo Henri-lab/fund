@@ -23,6 +23,11 @@ export const tabsComp = createTabs(
       name: 'table4',
       component: '/src/views/Count.vue',
     },
+    {
+      label: '基金净值走势',
+      name: 'table5',
+      component: '/src/views/TrendNavs.vue',
+    },
   ]),
   {
     initName: 'table',

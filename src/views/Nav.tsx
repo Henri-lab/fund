@@ -80,7 +80,7 @@ const component = defineComponent({
         return () => (
             <div class="custom-table-container fund">
                 <h1 class='custom-table-title'>净值列表</h1>
-                <ElSelect onChange={handleSelectChange}>
+                <ElSelect onChange={handleSelectChange} placeholder="请选择基金">
                     {selectOpts.value.map((item) => (
                         <ElOption key={item.value} label={item.label} value={item.value} />
                     ))}
