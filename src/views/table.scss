@@ -1,0 +1,48 @@
+/* 使用 Element Plus 提供的 CSS 变量进行主题自定义，可在此处调色 */
+:root {
+  /* 自定义主色调 */
+  --el-color-primary: #6f7fcd;
+}
+
+/* 表格容器额外样式 */
+.custom-table-container {
+  padding: 20px;
+  background: #07b6d9;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+/*表格样式*/
+.el-table {
+  border: 1px solid #235b91 !important;
+  border-bottom: 1px solid #235b91 !important;
+  --el-table-border-color: none !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  .el-table__body-wrapper {
+    background-color: #09263f !important;
+  }
+
+  tr {
+    background-color: #09263f !important;
+
+    td.el-table__cell {
+      border-bottom: 1px solid #235b91 !important;
+    }
+  }
+}
+
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+  background-color: #06192a !important;
+}
+
+.el-table thead tr > th {
+  background-color: #194671 !important;
+  color: #ffffff;
+  font-size: 16px;
+  border-bottom: 1px solid #235b91 !important;
+  font-weight: 400;
+}
