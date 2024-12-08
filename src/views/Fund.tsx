@@ -48,6 +48,9 @@ const component = defineComponent({
       let all = await db.getTotal()
       total.value = all.total; //1000
       fundStore.setTickerOptions(all.tickers); // 存储基金代码
+      fundStore.setManagers(all.allDescs.map(item => item.mgmt))//存储管理人
+      fundStore.setCustodians(all.allDescs.map(item => item.custodian))//存储托管人
+      fundStore.setAllDesc(all.allDescs)
       descs.value = await db.getDesc(pageSize.value, currentPage.value);
       try {
         data.value = await Promise.all(

@@ -1,5 +1,5 @@
 import createTabs from '@/components/Tabs/index';
-import { ref } from 'vue';
+import { markRaw, ref } from 'vue';
 
 export const tabsComp = createTabs(
   ref([
@@ -13,8 +13,13 @@ export const tabsComp = createTabs(
       name: 'table2',
       component: '/src/views/Nav.tsx',
     },
+    {
+      label: '基金统计',
+      name: 'table3',
+      component: '/src/views/Owner.vue',
+    },
   ]),
   {
-    initName:'table'
+    initName: 'table',
   }
 );

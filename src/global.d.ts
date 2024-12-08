@@ -3,3 +3,9 @@ declare module '/src/views/Fund.tsx' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+declare module '/src/views/*.vue' {
+  import { DefineComponent } from 'vue'
+  const component: DefineComponent<{}, {}, any>
+  export default component
+}

@@ -28,20 +28,23 @@ export async function runQueries(options: any = {}) {
       let total = res.length;
       let tickers = res.map((item: FundDesc) => {
         return {
-          label: item.ticker,
+          label: `${item.ticker} (${item.name})`,
           value: item.ticker,
         };
       });
-      let names = res.map((item: FundDesc) => {
+      let allDescs = res.map((item: FundDesc) => {
         return {
-          label: item.name,
-          value: item.name,
-        };
+          ticker: item.ticker,
+          name: item.name,
+          mgmt: item.mgmt,
+          custodian: item.custodian,
+          'incept dt': item['incept dt'],
+        } as FundDesc;
       });
       return {
         total,
         tickers,
-        names,
+        allDescs,
       };
     },
     getDesc: async (pageSize: number, curPage: number) => {
